@@ -1,0 +1,207 @@
+:root {
+    --black-color:#031319;
+    --cta-color: #51C1D6;
+    --principal-color:#486F8C;
+    --secundary-color: #2C456B;
+    --land-color: #BB6D50;
+
+}
+
+body {
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    place-items: center;
+    background-color: #486F8C98;
+}
+
+.phone {
+    position: relative;
+    width: 350px;
+    height: 650px;
+    border: 6px solid var(--black-color);
+    border-radius: 50px;
+    background-color: #CCEFFF;
+    box-shadow: 0 19px 38px rgba(3, 3, 25, 0.3);
+    overflow: hidden;
+}
+
+.layer {
+    position: absolute;
+    bottom: 0;
+}
+
+/* Estilos generales de elementos*/
+.buny {
+    position: absolute;
+    width: 70px;
+}
+
+.wall{
+    border-radius: 20px;
+}
+
+.cloud {
+    width: 120px;
+    height: 120px;
+    background-color: #eee;
+}
+
+/* Capas del juego */
+.layer-1 {
+    height: 555px;
+    right: 80px;
+    z-index: 1;
+    animation: Bunny .4s infinite;
+}
+.layer-2 {
+    height: 555px;
+    left: 80px;
+    animation: Bunny .35s infinite;
+
+    z-index: 2;
+}
+.layer-3 {
+    width: 250px;
+    height: 500px;
+    background-color: var(--land-color);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.4);
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+
+    z-index: 3;
+}
+.layer-4 {
+    height: 410px;
+    left: 30px;
+    z-index: 4;
+    animation: Bunny .4s infinite;
+}
+.layer-5 {
+    width: 220px;
+    height: 350px;
+    background-color: var(--land-color);
+    box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.4);
+    left: 0;
+
+    z-index: 5;
+}
+.layer-6 {
+    height: 300px;
+    right: 55px;
+    z-index: 6;
+    animation: Bunny .3s infinite;
+}
+.layer-7 {
+    width: 160px;
+    height: 250px;
+    background-color: var(--land-color);
+    box-shadow: -5px 0px 20px rgba(0, 0, 0, 0.3);
+    right: 20px;
+
+    z-index: 7;
+}
+.layer-8 {
+    left: 0px;
+    z-index: 8;
+}
+.layer-9 {
+    right: 0px;
+    z-index: 9;
+}
+.layer-10 {
+    z-index: 10;
+}
+
+
+/* Dibujando con css */
+
+.left-ear--outer {
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    left: 10px;
+    background-color: #fff;
+    border-radius: 90%;
+}
+
+.right-ear--outer{
+    position: absolute;
+    width: 20px;
+    height: 50px;
+    right: 10px;
+    background-color: #fff;
+    border-radius: 90%;
+}
+
+.left-ear--inner {
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    top: 5px;
+    left: 15px;
+    background-color: pink;
+    border-radius: 100%;
+}
+
+.right-ear--inner {
+    position: absolute;
+    width: 10px;
+    height: 50px;
+    top: 5px;
+    right: 15px;
+    background-color: pink;
+    border-radius: 100%;
+}
+.head {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 35px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 48%;
+}
+.head__eye {
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background: gray;
+    top: 15px;
+    border-radius: 50%;
+    animation: blinkEyes 1s infinite;
+}
+
+.head__eye--left {
+    left: 21px;
+}
+.head__eye--rigth {
+    right: 21px;
+}
+
+@keyframes Bunny {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes blinkEyes {
+    0% {
+        height: 7px;
+    }
+    5% {
+        transform: translate(0px, 3px);
+        height: 1px;
+    }
+    40% {
+        transform: translate(0px, 0px);
+        height: 6px;
+    }
+}
