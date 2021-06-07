@@ -215,7 +215,7 @@ body {
 }
 
 /* Animaciones */
-/* @keyframes Bunny {
+@keyframes Bunny {
     0% {
         transform: translateY(0px);
     }
@@ -236,4 +236,4 @@ body {
         transform: translate(0px, 0px);
         height: 6px;
     }
-} */
+}
