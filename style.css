@@ -13,7 +13,7 @@ body {
     margin: 0;
     place-items: center;
     background-color: #486F8C98;
-    counter-reset: game;
+    counter-reset: score;
 }
 
 .phone {
@@ -44,6 +44,17 @@ body {
     overflow: hidden;
 }
 
+.checkbox {
+    appearance: none;
+    width: 80px;
+    height: 80px;
+    margin: 0;
+    position: relative;
+    top: -5px;
+    cursor: pointer;
+    z-index: 10;
+}
+
 .cloud {
     width: 120px;
     height: 120px;
@@ -54,8 +65,9 @@ body {
 .layer-1 {
     height: 500px;
     right: 80px;
-    z-index: 1;
     animation: Bunny .5s infinite;
+
+    z-index: 1;
 }
 .layer-2 {
     height: 500px;
@@ -123,6 +135,7 @@ body {
     width: 20px;
     height: 50px;
     left: 10px;
+    top: 0;
     background-color: #fff;
     border-radius: 90%;
 }
@@ -132,6 +145,7 @@ body {
     width: 20px;
     height: 50px;
     right: 10px;
+    top: 0;
     background-color: #fff;
     border-radius: 90%;
 }
@@ -212,14 +226,14 @@ body {
 }
 
 /* Contador */
-.layer-1:active{
-    counter-increment: game;
+.checkbox:checked{
+    counter-increment: score;
 }
 
 .total-count::after {
-    content: counter(game);
+    content: counter(score);
 }
-/* 
+
 /* Animaciones */
 @keyframes Bunny {
     0% {
